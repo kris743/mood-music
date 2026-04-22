@@ -25,3 +25,40 @@ Upload or capture a photo → AI detects your facial emotion → Get personalize
 - **Backend**: FastAPI + OpenCV + HuggingFace Transformers
 - **Frontend**: React + Vite + TailwindCSS
 - **Model**: `dima806/facial_emotions_image_detection`
+
+## Local run
+
+### Backend
+```bash
+python -m pip install -r requirements.txt
+python app.py
+```
+Backend runs at `http://127.0.0.1:8000` and docs at `http://127.0.0.1:8000/docs`.
+
+### Frontend (dev)
+```bash
+cd frontend
+npm install
+npm run dev
+```
+Frontend runs at `http://localhost:5173`.
+
+## Deploy (single-container Docker: backend + built frontend)
+
+This repo includes a `Dockerfile` that:
+- builds the Vite frontend
+- serves it from the FastAPI backend
+
+### Render (Docker)
+1. Render → **New** → **Web Service**
+2. Connect GitHub repo: `kris743/mood-music`
+3. **Environment**: Docker
+4. Deploy
+
+Open your Render service URL to use the app UI.
+
+## API endpoints
+- `GET /api/health`
+- `GET /api/genres`
+- `POST /api/predict` (multipart form-data: `file`, `genre`)
+- Legacy aliases (kept for compatibility): `GET /genres`, `POST /predict`

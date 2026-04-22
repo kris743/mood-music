@@ -21,7 +21,12 @@ app.add_middleware(
 detector = EmotionDetector()
 
 @app.get("/api/health")
+async def health():
+    return {"message": "Music Mood API is running"}
+
+@app.get("/")
 async def root():
+    # If the frontend is built into the container, this route will be overridden below.
     return {"message": "Music Mood API is running"}
 
 @app.post("/api/predict")
@@ -48,6 +53,15 @@ async def predict_mood(file: UploadFile = File(...), genre: str = Form("hindi"))
 async def get_genres():
     return ["Punjabi", "Hindi", "English", "Rap", "Pop", "Old_90s"]
 
+# Backward-compatible aliases (older frontend used these)
+@app.post("/predict")
+async def predict_mood_legacy(file: UploadFile = File(...), genre: str = Form("hindi")):
+    return await predict_mood(file=file, genre=genre)
+
+@app.get("/genres")
+async def get_genres_legacy():
+    return await get_genres()
+
 # ── Serve React frontend static files ──────────────────────────────────────
 FRONTEND_DIST = os.path.join(os.path.dirname(__file__), "frontend", "dist")
 
@@ -67,5 +81,5 @@ if os.path.isdir(FRONTEND_DIST):
         return FileResponse(os.path.join(FRONTEND_DIST, "index.html"))
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 7860))
+    port = int(os.environ.get("PORT", "8000"))
     uvicorn.run(app, host="0.0.0.0", port=port)
