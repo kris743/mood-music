@@ -1,0 +1,460 @@
+{
+  "emotions": {
+    "happy": {
+      "emoji": "😊",
+      "punjabi": [
+        {"name": "MF Ghabru", "artist": "Karan Aujla"},
+        {"name": "Proper Patola", "artist": "Diljit Dosanjh"},
+        {"name": "High Rated Gabru", "artist": "Guru Randhawa"},
+        {"name": "Azul", "artist": "Guru Randhawa"},
+        {"name": "5 Taara", "artist": "Diljit Dosanjh"},
+        {"name": "Daru Badnaam", "artist": "Kamal Kahlon"},
+        {"name": "Wakhra Swag", "artist": "Badshah"}
+      ],
+      "hindi": [
+        {"name": "Gallan Goodiyaan", "artist": "Farhan Akhtar"},
+        {"name": "London Thumakda", "artist": "Labh Janjua"},
+        {"name": "Badtameez Dil", "artist": "Pritam"},
+        {"name": "Abhi Toh Party Shuru Hui Hai", "artist": "Badshah"},
+        {"name": "Ilahi", "artist": "Arijit Singh"},
+        {"name": "Balam Pichkari", "artist": "Vishal Dadlani"},
+        {"name": "Kar Gayi Chull", "artist": "Badshah"}
+      ],
+      "english": [
+        {"name": "Happy", "artist": "Pharrell Williams"},
+        {"name": "Can't Stop the Feeling!", "artist": "Justin Timberlake"},
+        {"name": "Uptown Funk", "artist": "Bruno Mars"},
+        {"name": "Shake It Off", "artist": "Taylor Swift"},
+        {"name": "Walking on Sunshine", "artist": "Katrina Waves"},
+        {"name": "I Gotta Feeling", "artist": "Black Eyed Peas"},
+        {"name": "Levitating", "artist": "Dua Lipa"}
+      ],
+      "rap": [
+        {"name": "Good Life", "artist": "Kanye West"},
+        {"name": "Touch The Sky", "artist": "Kanye West"},
+        {"name": "i", "artist": "Kendrick Lamar"},
+        {"name": "I Spy", "artist": "Kyle Ft Yachty"},
+        {"name": "No Problem", "artist": "Chance The Rapper"},
+        {"name": "Good Day", "artist": "Nappy Roots"},
+        {"name": "HUMBLE.", "artist": "Kendrick Lamar"}
+      ],
+      "pop": [
+        {"name": "Dynamite", "artist": "BTS"},
+        {"name": "24K Magic", "artist": "Bruno Mars"},
+        {"name": "Sugar", "artist": "Maroon 5"},
+        {"name": "Roar", "artist": "Katy Perry"},
+        {"name": "Party Rock Anthem", "artist": "LMFAO"},
+        {"name": "Despacito", "artist": "Luis Fonsi"},
+        {"name": "Blinding Lights", "artist": "The Weeknd"}
+      ],
+      "old_90s": [
+        {"name": "Urvashi Urvashi", "artist": "AR Rahman"},
+        {"name": "Sona Kitna Sona Hai", "artist": "Govinda"},
+        {"name": "Tan Tana Tan", "artist": "Abhijeet"},
+        {"name": "Friday I'm In Love", "artist": "The Cure"},
+        {"name": "Wannabe", "artist": "Spice Girls"},
+        {"name": "Semi-Charmed Life", "artist": "Third Eye Blind"},
+        {"name": "Livin La Vida Loca", "artist": "Ricky Martin"}
+      ]
+    },
+    "sad": {
+      "emoji": "😔",
+      "punjabi": [
+        {"name": "Mann Bharryaa", "artist": "B Praak"},
+        {"name": "Qismat", "artist": "Ammy Virk"},
+        {"name": "Pachtaoge", "artist": "Arijit Singh"},
+        {"name": "Filhall", "artist": "B Praak"},
+        {"name": "Soch", "artist": "Hardy Sandhu"},
+        {"name": "Koi Si", "artist": "Gurnam Bhullar"},
+        {"name": "Oh Yaara", "artist": "Arijit Singh"}
+      ],
+      "hindi": [
+        {"name": "Channa Mereya", "artist": "Arijit Singh"},
+        {"name": "Agar Tum Saath Ho", "artist": "Arijit Singh"},
+        {"name": "Tum Hi Ho", "artist": "Arijit Singh"},
+        {"name": "Tadap Tadap", "artist": "KK"},
+        {"name": "Hamari Adhuri Kahani", "artist": "Arijit Singh"},
+        {"name": "Kabira", "artist": "Arijit Singh"},
+        {"name": "Bekhayali", "artist": "Sachet Tandon"}
+      ],
+      "english": [
+        {"name": "Someone Like You", "artist": "Adele"},
+        {"name": "Fix You", "artist": "Coldplay"},
+        {"name": "The Night We Met", "artist": "Lord Huron"},
+        {"name": "Drivers License", "artist": "Olivia Rodrigo"},
+        {"name": "Stay With Me", "artist": "Sam Smith"},
+        {"name": "The Scientist", "artist": "Coldplay"},
+        {"name": "Hallelujah", "artist": "Jeff Buckley"}
+      ],
+      "rap": [
+        {"name": "Stan", "artist": "Eminem"},
+        {"name": "Mockingbird", "artist": "Eminem"},
+        {"name": "Lucid Dreams", "artist": "Juice WRLD"},
+        {"name": "Slippin", "artist": "DMX"},
+        {"name": "Changes", "artist": "2Pac"},
+        {"name": "u", "artist": "Kendrick Lamar"},
+        {"name": "Darkness", "artist": "Eminem"}
+      ],
+      "pop": [
+        {"name": "Stay", "artist": "Rihanna"},
+        {"name": "When the party's over", "artist": "Billie Eilish"},
+        {"name": "Wrecking Ball", "artist": "Miley Cyrus"},
+        {"name": "Rolling in the Deep", "artist": "Adele"},
+        {"name": "Jar of Hearts", "artist": "Christina Perri"},
+        {"name": "Liability", "artist": "Lorde"},
+        {"name": "Hurt", "artist": "Johnny Cash"}
+      ],
+      "old_90s": [
+        {"name": "Tujhe Yaad Na Meri Aayee", "artist": "Alka Yagnik"},
+        {"name": "Pardesi Pardesi", "artist": "Udit Narayan"},
+        {"name": "Chithi Na Koi Sandesh", "artist": "Jagjit Singh"},
+        {"name": "Lambi Judaai", "artist": "Reshma"},
+        {"name": "Zindagi Ke Safar Mein", "artist": "Kishore Kumar"},
+        {"name": "Nothing Compares 2 U", "artist": "Sinead O'Connor"},
+        {"name": "Hotel California", "artist": "Eagles"}
+      ]
+    },
+    "angry": {
+      "emoji": "😠",
+      "punjabi": [
+        {"name": "52 Bars", "artist": "Karan Aujla"},
+        {"name": "Case", "artist": "Sidhu Moose Wala"},
+        {"name": "The Last Ride", "artist": "Sidhu Moose Wala"},
+        {"name": "GOAT", "artist": "Sidhu Moose Wala"},
+        {"name": "So High", "artist": "Sidhu Moose Wala"},
+        {"name": "Legend", "artist": "Sidhu Moose Wala"},
+        {"name": "Same Beef", "artist": "Bohemia"}
+      ],
+      "hindi": [
+        {"name": "Aarambh Hai Prachand", "artist": "Piyush Mishra"},
+        {"name": "Zinda", "artist": "Siddharth Mahadevan"},
+        {"name": "Bhaag D.K. Bose", "artist": "Ram Sampath"},
+        {"name": "Sadda Haq", "artist": "Mohit Chauhan"},
+        {"name": "Malhari", "artist": "Vishal Dadlani"},
+        {"name": "Sultan Title Track", "artist": "Sukhwinder Singh"},
+        {"name": "Kar Har Maidaan Fateh", "artist": "Sukhwinder Singh"}
+      ],
+      "english": [
+        {"name": "In The End", "artist": "Linkin Park"},
+        {"name": "Numb", "artist": "Linkin Park"},
+        {"name": "Lose Yourself", "artist": "Eminem"},
+        {"name": "Killing in the Name", "artist": "RATM"},
+        {"name": "Smells Like Teen Spirit", "artist": "Nirvana"},
+        {"name": "Look What You Made Me Do", "artist": "Taylor Swift"},
+        {"name": "Believer", "artist": "Imagine Dragons"}
+      ],
+      "rap": [
+        {"name": "Till I Collapse", "artist": "Eminem"},
+        {"name": "Ni--as In Paris", "artist": "Kanye West"},
+        {"name": "Power", "artist": "Kanye West"},
+        {"name": "Look At Me", "artist": "XXXTentacion"},
+        {"name": "Sicko Mode", "artist": "Travis Scott"},
+        {"name": "Godzilla", "artist": "Eminem"},
+        {"name": "Jumpman", "artist": "Drake"}
+      ],
+      "pop": [
+        {"name": "Fighter", "artist": "Christina Aguilera"},
+        {"name": "Titanium", "artist": "David Guetta"},
+        {"name": "Stronger", "artist": "Kelly Clarkson"},
+        {"name": "Survivor", "artist": "Destiny's Child"},
+        {"name": "Grenade", "artist": "Bruno Mars"},
+        {"name": "Rolling in the Deep", "artist": "Adele"},
+        {"name": "Black Magic", "artist": "Little Mix"}
+      ],
+      "old_90s": [
+        {"name": "Enter Sandman", "artist": "Metallica"},
+        {"name": "Bulls on Parade", "artist": "RATM"},
+        {"name": "No Diggity", "artist": "Blackstreet"},
+        {"name": "Jump", "artist": "Kris Kross"},
+        {"name": "Firestarter", "artist": "The Prodigy"},
+        {"name": "Thunderstruck", "artist": "ACDC"},
+        {"name": "Insane in the Brain", "artist": "Cypress Hill"}
+      ]
+    },
+    "calm": {
+      "emoji": "😌",
+      "punjabi": [
+        {"name": "Ikk Kudi", "artist": "Diljit Dosanjh"},
+        {"name": "Aadat", "artist": "Ninja"},
+        {"name": "Raat Di Gedi", "artist": "Diljit Dosanjh"},
+        {"name": "Dil Di Reejh", "artist": "Prabh Gill"},
+        {"name": "Heer", "artist": "Harbhajan Mann"},
+        {"name": "Tere Bina", "artist": "Amrinder Gill"},
+        {"name": "Dildarian", "artist": "Amrinder Gill"}
+      ],
+      "hindi": [
+        {"name": "Iktara", "artist": "Kavita Seth"},
+        {"name": "Phir Le Aya Dil", "artist": "Arijit Singh"},
+        {"name": "Raabta", "artist": "Arijit Singh"},
+        {"name": "Moh Moh Ke Dhaage", "artist": "Papon"},
+        {"name": "Kun Faya Kun", "artist": "AR Rahman"},
+        {"name": "Te Amo", "artist": "Ash King"},
+        {"name": "Tum Se Hi", "artist": "Mohit Chauhan"}
+      ],
+      "english": [
+        {"name": "Weightless", "artist": "Marconi Union"},
+        {"name": "Vienna", "artist": "Billy Joel"},
+        {"name": "Watermelon Sugar", "artist": "Harry Styles"},
+        {"name": "The Scientist", "artist": "Coldplay"},
+        {"name": "Slow Dancing in a Burning Room", "artist": "John Mayer"},
+        {"name": "Thinking Out Loud", "artist": "Ed Sheeran"},
+        {"name": "Landslide", "artist": "Fleetwood Mac"}
+      ],
+      "rap": [
+        {"name": "Sunflower", "artist": "Post Malone"},
+        {"name": "Butterfly Effect", "artist": "Travis Scott"},
+        {"name": "Sdp Interlude", "artist": "Travis Scott"},
+        {"name": "Self Care", "artist": "Mac Miller"},
+        {"name": "White Iverson", "artist": "Post Malone"},
+        {"name": "One Dance", "artist": "Drake"},
+        {"name": "Hotline Bling", "artist": "Drake"}
+      ],
+      "pop": [
+        {"name": "Perfect", "artist": "Ed Sheeran"},
+        {"name": "A Thousand Years", "artist": "Christina Perri"},
+        {"name": "Stay With Me", "artist": "Sam Smith"},
+        {"name": "Apocalypse", "artist": "Cigarettes After Sex"},
+        {"name": "Landslide", "artist": "Dixie Chicks"},
+        {"name": "Photograph", "artist": "Ed Sheeran"},
+        {"name": "Yellow", "artist": "Coldplay"}
+      ],
+      "old_90s": [
+        {"name": "Pehla Nasha", "artist": "Udit Narayan"},
+        {"name": "Kahin Na Ja", "artist": "Udit Narayan"},
+        {"name": "Gymnopedie No 1", "artist": "Erik Satie"},
+        {"name": "Everyday Hurts", "artist": "REM"},
+        {"name": "Sound of Silence", "artist": "Simon Garfunkel"},
+        {"name": "Fields of Gold", "artist": "Sting"},
+        {"name": "Angel", "artist": "Sarah McLachlan"}
+      ]
+    },
+    "surprise": {
+      "emoji": "😲",
+      "punjabi": [
+        {"name": "Laembadgini", "artist": "Diljit Dosanjh"},
+        {"name": "Jimmy Choo", "artist": "Diljit Dosanjh"},
+        {"name": "Lamberghini", "artist": "The Doorbeen"},
+        {"name": "Expert Jatt", "artist": "Nawab"},
+        {"name": "Na Ja", "artist": "Pav Dharia"},
+        {"name": "Patola", "artist": "Guru Randhawa"},
+        {"name": "Tauba Tauba", "artist": "Karan Aujla"}
+      ],
+      "hindi": [
+        {"name": "Dhan Te Nan", "artist": "Kailash Kher"},
+        {"name": "Aankh Marey", "artist": "Neha Kakkar"},
+        {"name": "Kar Gayi Chull", "artist": "Badshah"},
+        {"name": "Galti Se Mistake", "artist": "Arijit Singh"},
+        {"name": "High Heels", "artist": "Honey Singh"},
+        {"name": "Saki Saki", "artist": "Neha Kakkar"},
+        {"name": "First Class", "artist": "Arijit Singh"}
+      ],
+      "english": [
+        {"name": "Thunder", "artist": "Imagine Dragons"},
+        {"name": "Enemy", "artist": "Imagine Dragons"},
+        {"name": "Starboy", "artist": "The Weeknd"},
+        {"name": "Uptown Funk", "artist": "Bruno Mars"},
+        {"name": "Don't Start Now", "artist": "Dua Lipa"},
+        {"name": "Bad Guy", "artist": "Billie Eilish"},
+        {"name": "Old Town Road", "artist": "Lil Nas X"}
+      ],
+      "rap": [
+        {"name": "God's Plan", "artist": "Drake"},
+        {"name": "Sicko Mode", "artist": "Travis Scott"},
+        {"name": "Highest In The Room", "artist": "Travis Scott"},
+        {"name": "Rockstar", "artist": "Post Malone"},
+        {"name": "Circles", "artist": "Post Malone"},
+        {"name": "Sunflower", "artist": "Post Malone"},
+        {"name": "Wow.", "artist": "Post Malone"}
+      ],
+      "pop": [
+        {"name": "Counting Stars", "artist": "OneRepublic"},
+        {"name": "Titanium", "artist": "David Guetta"},
+        {"name": "Wake Me Up", "artist": "Avicii"},
+        {"name": "Timber", "artist": "Pitbull"},
+        {"name": "Cheap Thrills", "artist": "Sia"},
+        {"name": "Starships", "artist": "Nicki Minaj"},
+        {"name": "Firework", "artist": "Katy Perry"}
+      ],
+      "old_90s": [
+        {"name": "Bohemian Rhapsody", "artist": "Queen"},
+        {"name": "Barbie Girl", "artist": "Aqua"},
+        {"name": "Blue Da Ba Dee", "artist": "Eiffel 65"},
+        {"name": "Macarena", "artist": "Los Del Rio"},
+        {"name": "Cotton Eye Joe", "artist": "Rednex"},
+        {"name": "Scatman", "artist": "Scatman John"},
+        {"name": "Mambo No 5", "artist": "Lou Bega"}
+      ]
+    },
+    "fear": {
+      "emoji": "😨",
+      "punjabi": [
+        {"name": "Mirza", "artist": "Gurdas Mann"},
+        {"name": "Jatt Juliet", "artist": "Diljit Dosanjh"},
+        {"name": "Fateh", "artist": "Amrinder Gill"},
+        {"name": "Ki Banu Duniya Da", "artist": "Gurdas Mann"},
+        {"name": "Challa", "artist": "Gurdas Mann"},
+        {"name": "Tera Yaar Bolda", "artist": "Surjit Bindrakhia"},
+        {"name": "Mukhda Vichar", "artist": "Various"}
+      ],
+      "hindi": [
+        {"name": "Raat Akeli Hai", "artist": "Asha Bhosle"},
+        {"name": "Gumnaam Hai Koi", "artist": "Lata Mangeshkar"},
+        {"name": "Aayega Aanewala", "artist": "Lata Mangeshkar"},
+        {"name": "Kahin Deep Jale", "artist": "Lata Mangeshkar"},
+        {"name": "Bhoot Aaya", "artist": "Mika Singh"},
+        {"name": "Darr Title Track", "artist": "Abhijeet"},
+        {"name": "Saathi Re", "artist": "Kishore Kumar"}
+      ],
+      "english": [
+        {"name": "Mad World", "artist": "Gary Jules"},
+        {"name": "Sound of Silence", "artist": "Simon Garfunkel"},
+        {"name": "Thriller", "artist": "Michael Jackson"},
+        {"name": "Bury a Friend", "artist": "Billie Eilish"},
+        {"name": "Heathens", "artist": "Twenty One Pilots"},
+        {"name": "Entry Music", "artist": "Radiohead"},
+        {"name": "Creep", "artist": "Radiohead"}
+      ],
+      "rap": [
+        {"name": "Darkness", "artist": "Eminem"},
+        {"name": "Dark Knight Dummo", "artist": "Trippie Redd"},
+        {"name": "Stan", "artist": "Eminem"},
+        {"name": "Mockingbird", "artist": "Eminem"},
+        {"name": "Changes", "artist": "2Pac"},
+        {"name": "Brenda's Got a Baby", "artist": "2Pac"},
+        {"name": "Keep Ya Head Up", "artist": "2Pac"}
+      ],
+      "pop": [
+        {"name": "Hurt", "artist": "Christina Aguilera"},
+        {"name": "Skinny Love", "artist": "Birdy"},
+        {"name": "Liability", "artist": "Lorde"},
+        {"name": "Wrecking Ball", "artist": "Miley Cyrus"},
+        {"name": "Blackbird", "artist": "The Beatles"},
+        {"name": "Yesterday", "artist": "The Beatles"},
+        {"name": "Let It Be", "artist": "The Beatles"}
+      ],
+      "old_90s": [
+        {"name": "Unwell", "artist": "Matchbox Twenty"},
+        {"name": "Everyday Hurts", "artist": "REM"},
+        {"name": "Losing My Religion", "artist": "REM"},
+        {"name": "Jeremy", "artist": "Pearl Jam"},
+        {"name": "Black Hole Sun", "artist": "Soundgarden"},
+        {"name": "Under The Bridge", "artist": "RHCP"},
+        {"name": "Zombie", "artist": "The Cranberries"}
+      ]
+    },
+    "disgust": {
+      "emoji": "🤢",
+      "punjabi": [
+        {"name": "Titliaan", "artist": "Afsana Khan"},
+        {"name": "Dildarian", "artist": "Amrinder Gill"},
+        {"name": "Titliaan Warga", "artist": "Harrdy Sandhu"},
+        {"name": "Pachtaoge", "artist": "Jaani"},
+        {"name": "Filhall", "artist": "B Praak"},
+        {"name": "Bewafa", "artist": "Imran Khan"},
+        {"name": "Amplifier", "artist": "Imran Khan"}
+      ],
+      "hindi": [
+        {"name": "Ye Jo Halka Halka", "artist": "Nusrat Fateh Ali Khan"},
+        {"name": "Ek Ladki Ko Dekha", "artist": "Kumar Sanu"},
+        {"name": "Tujhe Yaad Na Meri Aayi", "artist": "Alka Yagnik"},
+        {"name": "Channa Mereya", "artist": "Arijit Singh"},
+        {"name": "Kabira", "artist": "Arijit Singh"},
+        {"name": "Agar Tum Saath Ho", "artist": "Arijit Singh"},
+        {"name": "Tum Hi Ho", "artist": "Arijit Singh"}
+      ],
+      "english": [
+        {"name": "No", "artist": "Meghan Trainor"},
+        {"name": "Misery Business", "artist": "Paramore"},
+        {"name": "Boulevard of Broken Dreams", "artist": "Green Day"},
+        {"name": "Welcome to my Life", "artist": "Simple Plan"},
+        {"name": "Basket Case", "artist": "Green Day"},
+        {"name": "Ugly", "artist": "Various"},
+        {"name": "Toxic", "artist": "Britney Spears"}
+      ],
+      "rap": [
+        {"name": "The Message", "artist": "Grandmaster Flash"},
+        {"name": "White Lines", "artist": "Grandmaster Flash"},
+        {"name": "Hard Knock Life", "artist": "Jay Z"},
+        {"name": "Juicy", "artist": "The Notorious BIG"},
+        {"name": "Changes", "artist": "2Pac"},
+        {"name": "Me Against The World", "artist": "2Pac"},
+        {"name": "California Love", "artist": "2Pac"}
+      ],
+      "pop": [
+        {"name": "Jar of Hearts", "artist": "Christina Perri"},
+        {"name": "Rolling in the Deep", "artist": "Adele"},
+        {"name": "Hello", "artist": "Adele"},
+        {"name": "Grenade", "artist": "Bruno Mars"},
+        {"name": "Bad Romance", "artist": "Lady Gaga"},
+        {"name": "Poker Face", "artist": "Lady Gaga"},
+        {"name": "Elastic Heart", "artist": "Sia"}
+      ],
+      "old_90s": [
+        {"name": "Unbreak My Heart", "artist": "Toni Braxton"},
+        {"name": "Nothing Compares 2 U", "artist": "Sinead O'Connor"},
+        {"name": "Torn", "artist": "Natalie Imbruglia"},
+        {"name": "Don't Speak", "artist": "No Doubt"},
+        {"name": "Iris", "artist": "Goo Goo Dolls"},
+        {"name": "Wonderwall", "artist": "Oasis"},
+        {"name": "Bittersweet Symphony", "artist": "The Verve"}
+      ]
+    },
+    "neutral": {
+      "emoji": "😐",
+      "punjabi": [
+        {"name": "Jind Mahi", "artist": "Diljit Dosanjh"},
+        {"name": "Raat Di Gedi", "artist": "Diljit Dosanjh"},
+        {"name": "Do You Know", "artist": "Diljit Dosanjh"},
+        {"name": "Patola", "artist": "Guru Randhawa"},
+        {"name": "High Rated Gabru", "artist": "Guru Randhawa"},
+        {"name": "Lahore", "artist": "Guru Randhawa"},
+        {"name": "Made In India", "artist": "Guru Randhawa"}
+      ],
+      "hindi": [
+        {"name": "Ilahi", "artist": "Arijit Singh"},
+        {"name": "Kun Faya Kun", "artist": "AR Rahman"},
+        {"name": "Phir Le Aya Dil", "artist": "Arijit Singh"},
+        {"name": "Raabta", "artist": "Arijit Singh"},
+        {"name": "Matargashti", "artist": "Mohit Chauhan"},
+        {"name": "Tum Ho", "artist": "Mohit Chauhan"},
+        {"name": "Sadda Haq", "artist": "Mohit Chauhan"}
+      ],
+      "english": [
+        {"name": "Photograph", "artist": "Ed Sheeran"},
+        {"name": "Viva La Vida", "artist": "Coldplay"},
+        {"name": "Clocks", "artist": "Coldplay"},
+        {"name": "The Scientist", "artist": "Coldplay"},
+        {"name": "Yellow", "artist": "Coldplay"},
+        {"name": "Something Just Like This", "artist": "Coldplay"},
+        {"name": "Fix You", "artist": "Coldplay"}
+      ],
+      "rap": [
+        {"name": "One Dance", "artist": "Drake"},
+        {"name": "Hotline Bling", "artist": "Drake"},
+        {"name": "Passionfruit", "artist": "Drake"},
+        {"name": "God's Plan", "artist": "Drake"},
+        {"name": "Hold On We're Going Home", "artist": "Drake"},
+        {"name": "In My Feelings", "artist": "Drake"},
+        {"name": "Marvins Room", "artist": "Drake"}
+      ],
+      "pop": [
+        {"name": "Shape of You", "artist": "Ed Sheeran"},
+        {"name": "Thinking Out Loud", "artist": "Ed Sheeran"},
+        {"name": "Castle on the Hill", "artist": "Ed Sheeran"},
+        {"name": "Galway Girl", "artist": "Ed Sheeran"},
+        {"name": "Perfect", "artist": "Ed Sheeran"},
+        {"name": "Shivers", "artist": "Ed Sheeran"},
+        {"name": "Bad Habits", "artist": "Ed Sheeran"}
+      ],
+      "old_90s": [
+        {"name": "Ek Do Teen", "artist": "Alka Yagnik"},
+        {"name": "Kahin Na Ja", "artist": "Udit Narayan"},
+        {"name": "Dil Toh Pagal Hai", "artist": "Udit Narayan"},
+        {"name": "Pehla Nasha", "artist": "Udit Narayan"},
+        {"name": "Papa Kehte Hain", "artist": "Udit Narayan"},
+        {"name": "Dilwale Dulhania", "artist": "various"},
+        {"name": "Kuch Kuch Hota Hai", "artist": "Udit Narayan"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.env
+venv/
+env/
+
+# Node / frontend build artifacts (don't commit node_modules)
+frontend/node_modules/
+# DO commit frontend/dist so Docker can skip building if needed
+# frontend/dist/
+
+# Hugging Face model cache
+.cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Scratch
+scratch/
