@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+opencv-python
+transformers
+torch
+youtube-search
+python-multipart
+pillow
