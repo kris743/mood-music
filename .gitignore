@@ -30,3 +30,6 @@ Thumbs.db
 
 # Scratch
 scratch/
+
+# Zip files
+*.zip

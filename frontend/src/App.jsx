@@ -6,21 +6,21 @@ import './index.css';
 const API_BASE = import.meta.env.VITE_API_URL || '';
 
 const GENRE_OPTIONS = [
-  { id: 'punjabi',  label: '🕺 Punjabi' },
-  { id: 'hindi',   label: '🎸 Hindi'   },
+  { id: 'punjabi', label: '🕺 Punjabi' },
+  { id: 'hindi', label: '🎸 Hindi' },
   { id: 'english', label: '🚀 English' },
-  { id: 'rap',     label: '🎤 Rap'     },
-  { id: 'pop',     label: '✨ Pop'     },
-  { id: 'old_90s', label: '📼 90s'     },
+  { id: 'rap', label: '🎤 Rap' },
+  { id: 'pop', label: '✨ Pop' },
+  { id: 'old_90s', label: '📼 90s' },
 ];
 
 const EMOTION_DEMO = [
-  { emoji: '😊', label: 'Happy',   id: 'happy'   },
-  { emoji: '😔', label: 'Sad',     id: 'sad'     },
-  { emoji: '😠', label: 'Angry',   id: 'angry'   },
-  { emoji: '😌', label: 'Calm',    id: 'calm'    },
-  { emoji: '😲', label: 'Surprise',id: 'surprise'},
-  { emoji: '😨', label: 'Fear',    id: 'fear'    },
+  { emoji: '😊', label: 'Happy', id: 'happy' },
+  { emoji: '😔', label: 'Sad', id: 'sad' },
+  { emoji: '😠', label: 'Angry', id: 'angry' },
+  { emoji: '😌', label: 'Calm', id: 'calm' },
+  { emoji: '😲', label: 'Surprise', id: 'surprise' },
+  { emoji: '😨', label: 'Fear', id: 'fear' },
   { emoji: '🤢', label: 'Disgust', id: 'disgust' },
   { emoji: '😐', label: 'Neutral', id: 'neutral' },
 ];
@@ -33,15 +33,15 @@ function getEmbedUrl(url) {
 }
 
 export default function App() {
-  const webcamRef    = useRef(null);
-  const [detectedMood,    setDetectedMood]    = useState(null);
-  const [confidence,      setConfidence]      = useState(null);
-  const [selectedGenre,   setSelectedGenre]   = useState('hindi');
-  const [isDetecting,     setIsDetecting]     = useState(false);
-  const [isRefreshing,    setIsRefreshing]    = useState(false);
+  const webcamRef = useRef(null);
+  const [detectedMood, setDetectedMood] = useState(null);
+  const [confidence, setConfidence] = useState(null);
+  const [selectedGenre, setSelectedGenre] = useState('hindi');
+  const [isDetecting, setIsDetecting] = useState(false);
+  const [isRefreshing, setIsRefreshing] = useState(false);
   const [recommendations, setRecommendations] = useState(null);
-  const [currentSongIdx,  setCurrentSongIdx]  = useState(0);
-  const [error,           setError]           = useState(null);
+  const [currentSongIdx, setCurrentSongIdx] = useState(0);
+  const [error, setError] = useState(null);
 
   // Apply mood class to body for glow effects
   useEffect(() => {
@@ -97,9 +97,9 @@ export default function App() {
     }
   };
 
-  const currentSong    = recommendations?.songs?.[currentSongIdx];
-  const currentEmbed   = getEmbedUrl(currentSong?.url);
-  const moodEmoji      = EMOTION_DEMO.find(e => e.id === detectedMood)?.emoji || '🎵';
+  const currentSong = recommendations?.songs?.[currentSongIdx];
+  const currentEmbed = getEmbedUrl(currentSong?.url);
+  const moodEmoji = EMOTION_DEMO.find(e => e.id === detectedMood)?.emoji || '🎵';
 
   return (
     <div className="app-shell">
@@ -108,7 +108,7 @@ export default function App() {
         <div className="logo-wrap">
           <div className="logo-icon">🎵</div>
           <div>
-            <div className="logo-text">MoodTunes AI</div>
+            <div className="logo-text">MoodMusic </div>
             <div className="logo-sub">Emotion-Based Music</div>
           </div>
         </div>

@@ -5,16 +5,34 @@ from transformers import pipeline
 import json
 import os
 from PIL import Image
+from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeoutError
 
 class EmotionDetector:
+    # Map model output labels → app emotion keys used in songs.json
+    LABEL_MAP = {
+        'angry':    'angry',
+        'disgust':  'disgust',
+        'fear':     'fear',
+        'happy':    'happy',
+        'sad':      'sad',
+        'surprise': 'surprise',
+        'neutral':  'neutral',
+    }
+
     def __init__(self):
         # Initialize OpenCV Face Detection (Haar Cascades)
         cascade_path = cv2.data.haarcascades + 'haarcascade_frontalface_default.xml'
         self.face_cascade = cv2.CascadeClassifier(cascade_path)
         
-        # Initialize Emotion Classification Pipeline (ViT model)
+        # Initialize Emotion Classification Pipeline
+        # Using trpakov/vit-face-expression — a ViT fine-tuned on FER2013
+        # with ~71% accuracy and much less neutral-bias than dima806's model
         print("Loading Emotion Classification Model (ViT)...")
-        self.classifier = pipeline("image-classification", model="dima806/facial_emotions_image_detection")
+        self.classifier = pipeline(
+            "image-classification",
+            model="trpakov/vit-face-expression",
+            top_k=7,  # return all 7 emotion scores
+        )
         print("Model Loaded.")
 
     def detect_emotion(self, image_bytes):
@@ -25,6 +43,21 @@ class EmotionDetector:
         if img is None:
             return None, "Invalid Image Data"
 
+        # Downscale large images for faster face detection
+        h_orig, w_orig = img.shape[:2]
+        max_dim = 640
+        if max(h_orig, w_orig) > max_dim:
+            scale = max_dim / max(h_orig, w_orig)
+            img = cv2.resize(img, None, fx=scale, fy=scale)
+
+        # Apply CLAHE contrast enhancement for better feature visibility
+        lab = cv2.cvtColor(img, cv2.COLOR_BGR2LAB)
+        l_channel, a_channel, b_channel = cv2.split(lab)
+        clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
+        l_channel = clahe.apply(l_channel)
+        lab = cv2.merge([l_channel, a_channel, b_channel])
+        img = cv2.cvtColor(lab, cv2.COLOR_LAB2BGR)
+
         # Convert to Gray for OpenCV detection
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         faces = self.face_cascade.detectMultiScale(gray, 1.1, 4)
@@ -32,28 +65,69 @@ class EmotionDetector:
         if len(faces) == 0:
             return None, "No face detected"
 
-        # Extract the first face
-        (x, y, w, h) = faces[0]
+        # Extract the largest face
+        (x, y, w, h) = max(faces, key=lambda f: f[2] * f[3])
+        
+        # ── Expand the crop by 40% on each side ──
+        # The Haar cascade bounding box is very tight and cuts off
+        # eyebrows, forehead, and jawline — features critical for
+        # emotion classification. Padding restores context the ViT
+        # model was trained on.
+        pad_w = int(w * 0.4)
+        pad_h = int(h * 0.4)
+        img_h, img_w = img.shape[:2]
+        x1 = max(0, x - pad_w)
+        y1 = max(0, y - pad_h)
+        x2 = min(img_w, x + w + pad_w)
+        y2 = min(img_h, y + h + pad_h)
         
         # Convert to RGB for the transformer pipeline
         img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        face_img = img_rgb[y:y+h, x:x+w]
+        face_img = img_rgb[y1:y2, x1:x2]
         
-        # Convert cropped face to PIL Image for the transformer pipeline
-        pil_img = Image.fromarray(face_img)
+        # Resize face crop to model's expected size (224x224) for faster inference
+        pil_img = Image.fromarray(face_img).resize((224, 224), Image.LANCZOS)
         
         # Run inference
         outputs = self.classifier(pil_img)
         
+        # Debug: log top-3 predictions to diagnose bias
+        print(f"[Emotion] Top-3: {[(o['label'], round(o['score'], 3)) for o in outputs[:3]]}")
+        
         # The model returns a list of classes and scores. We take the top one.
-        # Format: [{'label': 'happy', 'score': 0.9}, ...]
         top_prediction = outputs[0]
-        return top_prediction['label'], top_prediction['score']
+        raw_label = top_prediction['label'].lower()
+        mapped_label = self.LABEL_MAP.get(raw_label, 'neutral')
+        return mapped_label, top_prediction['score']
 
 from youtube_search import YoutubeSearch
 
 # Search Cache: Avoid repeating expensive searches during a session
 SEARCH_CACHE = {}
+
+def _search_youtube_single(song):
+    """Search YouTube for a single song. Called in parallel by ThreadPoolExecutor."""
+    name = song['name']
+    artist = song['artist']
+    cache_key = f"{name}-{artist}".lower()
+
+    if cache_key in SEARCH_CACHE:
+        song['url'] = SEARCH_CACHE[cache_key]
+        return song
+
+    query = f"{name} {artist} official music video"
+    print(f"Searching YouTube for: {query}")
+    try:
+        results = YoutubeSearch(query, max_results=1).to_dict()
+        if results:
+            video_id = results[0]['id']
+            song_url = f"https://www.youtube.com/watch?v={video_id}"
+            song['url'] = song_url
+            SEARCH_CACHE[cache_key] = song_url
+    except Exception as search_err:
+        print(f"Search failed for {name}: {search_err}")
+
+    return song
 
 def get_recommendations(emotion, genre="hindi"):
     try:
@@ -94,33 +168,9 @@ def get_recommendations(emotion, genre="hindi"):
         random.shuffle(selected_songs)
         subset = selected_songs[:5]
 
-        # Enhance songs with dynamic YouTube links
-        final_songs = []
-        for s in subset:
-            name = s['name']
-            artist = s['artist']
-            cache_key = f"{name}-{artist}".lower()
-            
-            if cache_key in SEARCH_CACHE:
-                s['url'] = SEARCH_CACHE[cache_key]
-            else:
-                # Use dynamic search to get a fresh, working URL
-                query = f"{name} {artist} official music video"
-                print(f"Searching YouTube for: {query}")
-                try:
-                    results = YoutubeSearch(query, max_results=1).to_dict()
-                    if results:
-                        video_id = results[0]['id']
-                        song_url = f"https://www.youtube.com/watch?v={video_id}"
-                        s['url'] = song_url
-                        SEARCH_CACHE[cache_key] = song_url
-                    else:
-                        # Keep original if search fails
-                        pass
-                except Exception as search_err:
-                    print(f"Search failed for {name}: {search_err}")
-
-            final_songs.append(s)
+        # Enhance songs with dynamic YouTube links — run ALL searches in PARALLEL
+        with ThreadPoolExecutor(max_workers=5) as executor:
+            final_songs = list(executor.map(_search_youtube_single, subset, timeout=10))
 
         return {
             "emotion": mapped_emotion,
