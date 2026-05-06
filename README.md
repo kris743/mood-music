@@ -1,12 +1,12 @@
 ---
-title: MoodTunes AI
+title: MoodMusic
 emoji: 🎵
 colorFrom: purple
 colorTo: blue
 sdk: docker
 pinned: false
 license: mit
-short_description: Detect your mood from your face and get music recommendations
+short_description: Face emotion detection for music recommendations
 ---
 
 # MoodTunes AI 🎵
