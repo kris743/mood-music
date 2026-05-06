@@ -168,9 +168,18 @@ def get_recommendations(emotion, genre="hindi"):
         random.shuffle(selected_songs)
         subset = selected_songs[:5]
 
-        # Enhance songs with dynamic YouTube links — run ALL searches in PARALLEL
-        with ThreadPoolExecutor(max_workers=5) as executor:
-            final_songs = list(executor.map(_search_youtube_single, subset, timeout=10))
+        # Try YouTube search — but don't let it kill the whole response
+        try:
+            with ThreadPoolExecutor(max_workers=5) as executor:
+                final_songs = list(executor.map(_search_youtube_single, subset, timeout=10))
+        except Exception as yt_err:
+            print(f"YouTube search failed (non-fatal): {yt_err}")
+            # Add fallback YouTube search URLs so the frontend can still work
+            for song in subset:
+                if 'url' not in song:
+                    query = f"{song['name']} {song['artist']}".replace(' ', '+')
+                    song['url'] = f"https://www.youtube.com/results?search_query={query}"
+            final_songs = subset
 
         return {
             "emotion": mapped_emotion,
@@ -180,4 +189,10 @@ def get_recommendations(emotion, genre="hindi"):
         }
     except Exception as e:
         print(f"Error in recommendation logic: {e}")
-        return None
+        return {
+            "emotion": emotion,
+            "raw_emotion": emotion,
+            "emoji": "🎵",
+            "songs": []
+        }
+
