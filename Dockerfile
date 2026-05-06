@@ -5,10 +5,10 @@ FROM node:20-slim AS frontend-builder
 
 WORKDIR /build/frontend
 COPY frontend/package*.json ./
-RUN npm ci
+RUN npm ci && chmod -R +x node_modules/.bin/
 
 COPY frontend/ ./
-RUN npm run build
+RUN npx vite build
 
 # ────────────────────────────────────────────────────────────────────────────
 # Stage 2 – Python backend + copy frontend dist
