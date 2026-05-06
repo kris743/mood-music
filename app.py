@@ -24,11 +24,6 @@ detector = EmotionDetector()
 async def health():
     return {"message": "Music Mood API is running"}
 
-@app.get("/")
-async def root():
-    # If the frontend is built into the container, this route will be overridden below.
-    return {"message": "Music Mood API is running"}
-
 @app.post("/api/predict")
 async def predict_mood(file: UploadFile = File(...), genre: str = Form("hindi")):
     try:
@@ -81,5 +76,5 @@ if os.path.isdir(FRONTEND_DIST):
         return FileResponse(os.path.join(FRONTEND_DIST, "index.html"))
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", "8000"))
+    port = int(os.environ.get("PORT", "7860"))
     uvicorn.run(app, host="0.0.0.0", port=port)
